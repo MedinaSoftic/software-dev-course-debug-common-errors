@@ -23,24 +23,28 @@ Think about which debugging methods you found most useful and how you might appl
 // Program A
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
+// This is Syntax error
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
-
+//The program above is a syntax error. This is due the the missing end quote, a close parenthese and a semi colon. If we did not understand why,
+//then we could run the code and the debug console will state "SyntaxError: Invalid or unexpected token".
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
 // What’s Wrong?
-
+// The reason why the program is unable to run is due to the string "eight", it is not a integer like 2, 4. It also doesnt need to be in quotes. So we changed it to (2, 4, 8). 
+// You can put the quotes around the numbers but it doesnt look clean. The code now runs.
+// This is a Runtime error
 
 
 // Program C (Logic Error)
@@ -51,12 +55,15 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return false;  // Supposed to indicate num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return true; // Supposed to indicate num IS prime
 }
 
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+// The reason why the code was giving the wrong output at the end was due to the true and false statments. 
+// Originally it stated true IF num is NOT prime. It should state false, since its not a prime number. 
+// We have to switch line 56 to false and line 59 to true. This is a logic error 
